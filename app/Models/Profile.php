@@ -5,11 +5,15 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Category extends Model
+class Profile extends Model
 {
     use HasFactory;
-    public function courses()
+
+    // relacion 1 a 1 inversa
+    public function user()
     {
-        return $this->hasMany('App\Models\Course');
+        $this->belongsTo('App\Models\User');
     }
+
+    
 }
